@@ -1,0 +1,145 @@
+CRUDSET  DFHMSD TYPE=&SYSPARM,                                         X
+               MODE=INOUT,                                             X
+               CTRL=FREEKB,                                            X
+               LANG=COBOL,                                             X
+               TIOAPFX=YES,                                            X
+               DSATTS=(COLOR,HILIGHT),                                 X
+               MAPATTS=(COLOR,HILIGHT),                                X
+               STORAGE=AUTO
+***********************************************************************
+CRUDMAP  DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+***********************************************************************
+** TITLE
+***********************************************************************
+         DFHMDF POS=(02,24),                                           X
+               LENGTH=27,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='EMPLOYEES MANAGEMENT SYSTEM'
+         DFHMDF POS=(03,24),                                           X
+               LENGTH=27,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='==========================='
+***********************************************************************
+** INSTRUCTIONS
+***********************************************************************
+         DFHMDF POS=(06,01),                                           X
+               LENGTH=75,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=NEUTRAL,                                          X
+               INITIAL='This application allows to create, retrieve, upX
+               date and delete an employee.'
+***********************************************************************
+** EMPLOYEE ID
+***********************************************************************
+         DFHMDF POS=(10,14),                                           X
+               LENGTH=12,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='Employee ID:'
+EMPID    DFHMDF POS=(10,27),                                           X
+               LENGTH=2,                                               X
+               ATTRB=(UNPROT,IC),                                      X
+               HILIGHT=UNDERLINE,                                      X
+               PICIN='9(2)',                                           X
+               PICOUT='9(2)',                                          X
+               COLOR=TURQUOISE
+         DFHMDF POS=(10,30),                                           X
+               LENGTH=1,                                               X
+               ATTRB=ASKIP
+***********************************************************************
+** ACTION
+***********************************************************************
+         DFHMDF POS=(12,19),                                           X
+               LENGTH=7,                                               X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='Action:'
+ACTION   DFHMDF POS=(12,27),                                           X
+               LENGTH=1,                                               X
+               ATTRB=UNPROT,                                           X
+               HILIGHT=UNDERLINE,                                      X
+               PICIN='9(1)',                                           X
+               PICOUT='9(1)',                                          X
+               COLOR=TURQUOISE
+         DFHMDF POS=(12,29),                                           X
+               LENGTH=1,                                               X
+               ATTRB=ASKIP
+***********************************************************************
+** FIRST NAME
+***********************************************************************
+         DFHMDF POS=(10,37),                                           X
+               LENGTH=11,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='First Name:'
+FNAME    DFHMDF POS=(10,49),                                           X
+               LENGTH=15,                                              X
+               ATTRB=UNPROT,                                           X
+               HILIGHT=UNDERLINE,                                      X
+               COLOR=TURQUOISE
+         DFHMDF POS=(10,65),                                           X
+               LENGTH=1,                                               X
+               ATTRB=ASKIP
+***********************************************************************
+** LAST NAME
+***********************************************************************
+         DFHMDF POS=(11,38),                                           X
+               LENGTH=10,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='Last Name:'
+LNAME    DFHMDF POS=(11,49),                                           X
+               LENGTH=15,                                              X
+               ATTRB=UNPROT,                                           X
+               HILIGHT=UNDERLINE,                                      X
+               COLOR=TURQUOISE
+         DFHMDF POS=(11,65),                                           X
+               LENGTH=1,                                               X
+               ATTRB=ASKIP
+***********************************************************************
+** SALARY
+***********************************************************************
+         DFHMDF POS=(12,41),                                           X
+               LENGTH=7,                                               X
+               ATTRB=PROT,                                             X
+               COLOR=GREEN,                                            X
+               INITIAL='Salary:'
+SALARY   DFHMDF POS=(12,49),                                           X
+               LENGTH=5,                                               X
+               ATTRB=UNPROT,                                           X
+               PICIN='9(5)',                                           X
+               PICOUT='9(5)',                                          X
+               HILIGHT=UNDERLINE,                                      X
+               COLOR=TURQUOISE
+         DFHMDF POS=(12,55),                                           X
+               LENGTH=1,                                               X
+               ATTRB=ASKIP
+***********************************************************************
+** RESULTS MESSAGE
+***********************************************************************
+MSG      DFHMDF POS=(17,01),                                           X
+               LENGTH=79,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=YELLOW
+***********************************************************************
+** ACTIONS LIST
+***********************************************************************
+         DFHMDF POS=(22,01),                                           X
+               LENGTH=50,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=BLUE,                                             X
+               INITIAL='ACTIONS:  1-CREATE  2-RETRIEVE  3-UPDATE  4-DELX
+               ETE'
+***********************************************************************
+** COMMANDS
+***********************************************************************
+         DFHMDF POS=(24,01),                                           X
+               LENGTH=20,                                              X
+               ATTRB=PROT,                                             X
+               COLOR=BLUE,                                             X
+               INITIAL='F3=Exit Enter=Submit'
+***********************************************************************
+         DFHMSD TYPE=FINAL
+         END
